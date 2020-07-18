@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>王艺苑的简历</title>
+</head>
+
+<body>
+  <style id="style"></style>
+  <div id="html"></div>
+  <div id="div1Wrapper">
+    <div id="div1"></div>
+  </div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    *::before {
+      box-sizing: border-box;
+    }
+
+    *::after {
+      box-sizing: border-box;
+    }
+
+    #html {
+      word-break: break-all;
+    }
+
+    #div1Wrapper {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 20px;
+    }
+
+    #div1::before {
+      /*伪元素里不能再有伪元素*/
+      content: '';
+      /*content不能删，删了就没有span了。*/
+      /*在div的第一个子元素加一个1。由于是CSS加的元素，不是真的元素，所以叫伪元素*/
+      display: block;
+      /*有了伪元素就不用自己写div了。*/
+      position: absolute;
+    }
+
+    #div1::after {
+      content: '';
+      /*在div的最后一个子元素加2*/
+      display: block;
+      position: absolute;
+    }
+
+    @media (max-width:500px) {
+      body {
+        color: red;
+      }
+
+      /*媒体查询*/
+      #html {
+        height: 50vh;
+        overflow: auto;
+      }
+
+      #div1Wrapper {
+        height: 50vh;
+        position: relative;
+      }
+
+      #div1 {
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+    }
+  </style>
+  <script src="main.js"></script>
+</body>
+
+</html>
